@@ -306,6 +306,16 @@ function ascendente() {
 
 }
 
+function numeroascendente(){
+    orden = "numero ascendente"
+    actualizarLista ();
+}
+
+function numerodescendente(){
+    orden ="numero descendente"
+    actualizarLista();
+}
+
 function descendente() {
     orden = "descendente";
     actualizarLista();
@@ -319,10 +329,10 @@ function actualizarLista() {
     if (orden === "ascendente") {
         listaordenada = datos.sort(
             (a, b) => {
-            if (a.nombre_especie < b.nombre_especie) return -1;
-            if (a.nombre_especie > b.nombre_especie) return 1;
-            return 0;
-        })
+                if (a.nombre_especie < b.nombre_especie) return -1;
+                if (a.nombre_especie > b.nombre_especie) return 1;
+                return 0;
+            })
 
     } else if (orden === "descendente") {
         listaordenada = [...datos].sort(
