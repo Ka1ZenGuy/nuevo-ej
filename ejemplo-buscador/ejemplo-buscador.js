@@ -337,9 +337,13 @@ function actualizarLista() {
     else {
         listaordenada = [...datos];
     }
+
+    let textoBuscado = document.getElementById("barra-busqueda").value;
+    console.log(textoBuscado);
+    let listafiltrada = listaordenada.filter(x => x.nombre_especie.includes(textoBuscado.toLowerCase()));
     {
         document.getElementById("lista").innerHTML =
-            listaordenada
+            listafiltrada
                 .map(
                     x =>
                         `<div> 
