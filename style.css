@@ -1,0 +1,12 @@
+div.box{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    margin: 1em;
+}
+#caja-1 {
+    background-color: coral;
+}
+.pinchado   {
+    background-color: black !important;
+}
