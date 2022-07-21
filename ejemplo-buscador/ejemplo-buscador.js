@@ -335,7 +335,8 @@ function actualizarLista() {
             })
 
     } else if (orden === "descendente") {
-        listaordenada = [...datos].sort(
+        console.log("etrydtftsd")
+        listaordenada = datos.sort(
             (a, b) => {
                 if (a.nombre_especie.toLowerCase() > b.nombre_especie.toLowerCase()) return -1;
                 if (a.nombre_especie.toLowerCase() < b.nombre_especie.toLowerCase()) return 1;
