@@ -306,13 +306,13 @@ function ascendente() {
 
 }
 
-function numeroascendente(){
-    orden = "numero ascendente"
-    actualizarLista ();
+function numeroascendente() {
+    orden = "numeroascendente"
+    actualizarLista();
 }
 
-function numerodescendente(){
-    orden ="numero descendente"
+function numerodescendente() {
+    orden = "numerodescendente"
     actualizarLista();
 }
 
@@ -329,20 +329,37 @@ function actualizarLista() {
     if (orden === "ascendente") {
         listaordenada = datos.sort(
             (a, b) => {
-                if (a.nombre_especie < b.nombre_especie) return -1;
-                if (a.nombre_especie > b.nombre_especie) return 1;
+                if (a.nombre_especie.toLowerCase() < b.nombre_especie.toLowerCase()) return -1;
+                if (a.nombre_especie.toLowerCase() > b.nombre_especie.toLowerCase()) return 1;
                 return 0;
             })
 
     } else if (orden === "descendente") {
         listaordenada = [...datos].sort(
             (a, b) => {
-                if (a.nombre_especie > b.nombre_especie) return -1;
-                if (a.nombre_especie < b.nombre_especie) return 1;
+                if (a.nombre_especie.toLowerCase() > b.nombre_especie.toLowerCase()) return -1;
+                if (a.nombre_especie.toLowerCase() < b.nombre_especie.toLowerCase()) return 1;
                 return 0;
             }
 
         )
+    }
+    if (orden === "numeroascendente") {
+        listaordenada = datos.sort(
+            (a, b) => {
+                if (a.recuento < b.recuento) return -1;
+                if (a.recuento > b.recuento) return 1;
+                return 0;
+
+            })
+    }
+    else if (orden === "numerodescendente") {
+        listaordenada = datos.sort(
+            (a, b) => {
+                if (a.recuento > b.recuento) return -1;
+                if (a.recuento < b.recuento) return 1;
+                return 0;
+            })
     }
     else {
         listaordenada = [...datos];
